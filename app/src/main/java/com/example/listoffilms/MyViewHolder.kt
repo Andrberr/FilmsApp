@@ -15,7 +15,7 @@ class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val rating = itemView.findViewById<TextView>(R.id.rating)
 
         Glide
-            .with(itemView)
+            .with(itemView.context)
             .load(film.poster)
             .into(poster)
         name.text = film.name
