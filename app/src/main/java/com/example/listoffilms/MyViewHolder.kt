@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
 class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    fun bind(film: Film) {
+    fun bind(film: UiItem.Film) {
         val poster = itemView.findViewById<ImageView>(R.id.poster)
         val name = itemView.findViewById<TextView>(R.id.name)
         val hasOscar = itemView.findViewById<ImageView>(R.id.oscar)

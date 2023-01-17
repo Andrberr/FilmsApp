@@ -8,11 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
 class MainActivity : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
+     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         val films = Server.getFilms()
         val recycler = findViewById<RecyclerView>(R.id.recycler)
         val adapter = MyAdapter(films)

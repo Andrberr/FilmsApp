@@ -4,16 +4,40 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class MyAdapter(val films: List<Film>) : RecyclerView.Adapter<MyViewHolder>() {
+class MyAdapter(private val list: List<UiItem>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
-        return MyViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
+        when (viewType) {
+            FILM_TYPE -> {
+                val view =
+                    LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
+                MyViewHolder(view)
+            }
+            TITLE_TYPE -> {
+                val view =
+                    LayoutInflater.from(parent.context).inflate(R.layout.text_item, parent, false)
+                HeaderViewHolder(view)
+            }
+            else -> throw Exception()
+        }
+
+    override fun getItemCount(): Int = list.size
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        when (holder) {
+            is MyViewHolder -> holder.bind(list[position] as UiItem.Film)
+            is HeaderViewHolder -> holder.bind(list[position] as UiItem.Header)
+        }
     }
 
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bind(films[position])
+    override fun getItemViewType(position: Int): Int = when (list[position]) {
+        is UiItem.Film -> FILM_TYPE
+        is UiItem.Header -> TITLE_TYPE
+        else -> throw Exception()
     }
 
-    override fun getItemCount(): Int = films.size
+    companion object {
+        private const val TITLE_TYPE = 1
+        private const val FILM_TYPE = 2
+    }
 }
