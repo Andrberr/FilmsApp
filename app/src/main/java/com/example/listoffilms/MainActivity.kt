@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
              supportFragmentManager
                  .beginTransaction()
                  .add(R.id.frame_layout, messageFragment)
+                 .addToBackStack("fragment")
                  .commit()
          }
         val adapter = MyAdapter(films, itemClick)
