@@ -4,14 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class MyAdapter(private val list: List<UiItem>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MyAdapter(private val list: List<UiItem>, private val itemCLick: (String, String) -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
         when (viewType) {
             FILM_TYPE -> {
                 val view =
                     LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
-                MyViewHolder(view)
+                MyViewHolder(view, itemCLick)
             }
             TITLE_TYPE -> {
                 val view =

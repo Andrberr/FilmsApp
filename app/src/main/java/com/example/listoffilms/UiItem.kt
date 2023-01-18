@@ -5,7 +5,8 @@ sealed class UiItem {
         val poster: String,
         val name: String,
         val hasOscar: Boolean,
-        val rating: Double
+        val rating: Double,
+        val description: String
     ) : UiItem()
 
     data class Header(val tittle: String) : UiItem()

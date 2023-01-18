@@ -7,7 +7,7 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class MyViewHolder(itemView: View, private val itemClick: (String, String) -> Unit) : RecyclerView.ViewHolder(itemView) {
     fun bind(film: UiItem.Film) {
         val poster = itemView.findViewById<ImageView>(R.id.poster)
         val name = itemView.findViewById<TextView>(R.id.name)
@@ -21,5 +21,9 @@ class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         name.text = film.name
         hasOscar.isVisible = film.hasOscar
         rating.text = film.rating.toString()
+
+        itemView.setOnClickListener {
+            itemClick.invoke(film.name, film.description)
+        }
     }
 }
