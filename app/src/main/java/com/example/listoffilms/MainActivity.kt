@@ -15,14 +15,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val films = Server.getFilms()
         val recycler = findViewById<RecyclerView>(R.id.recycler)
-         val itemClick: (String, String) -> Unit = {name, descr ->
+         val itemClick: (String, String) -> Unit =  {name, descr ->
 
              val messageFragment = FilmFragment.newInstance(name, descr)
 
              supportFragmentManager
                  .beginTransaction()
                  .add(R.id.frame_layout, messageFragment)
-                 .addToBackStack("fragment")
+                  .addToBackStack("fragment")
                  .commit()
          }
         val adapter = MyAdapter(films, itemClick)
