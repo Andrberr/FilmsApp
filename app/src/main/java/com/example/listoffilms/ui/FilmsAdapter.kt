@@ -1,17 +1,19 @@
-package com.example.listoffilms
+package com.example.listoffilms.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.listoffilms.R
+import com.example.listoffilms.model.models.UiItem
 
-class MyAdapter(private val list: List<UiItem>, private val itemCLick: (String, String) -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class FilmsAdapter(private val list: List<UiItem>, private val itemCLick: (String, String) -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
         when (viewType) {
             FILM_TYPE -> {
                 val view =
                     LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
-                MyViewHolder(view, itemCLick)
+                FilmViewHolder(view, itemCLick)
             }
             TITLE_TYPE -> {
                 val view =
@@ -25,7 +27,7 @@ class MyAdapter(private val list: List<UiItem>, private val itemCLick: (String, 
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
-            is MyViewHolder -> holder.bind(list[position] as UiItem.Film)
+            is FilmViewHolder -> holder.bind(list[position] as UiItem.Film)
             is HeaderViewHolder -> holder.bind(list[position] as UiItem.Header)
         }
     }

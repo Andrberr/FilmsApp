@@ -1,4 +1,4 @@
-package com.example.listoffilms
+package com.example.listoffilms.model.models
 
 sealed class UiItem {
     data class Film(
