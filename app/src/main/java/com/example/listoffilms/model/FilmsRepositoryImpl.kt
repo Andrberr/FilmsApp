@@ -1,7 +1,9 @@
-package com.example.listoffilms
+package com.example.listoffilms.model
 
-object Server {
-    fun getFilms(): List<UiItem> {
+import com.example.listoffilms.model.models.UiItem
+
+class FilmsRepositoryImpl : FilmsRepository {
+    override fun getFilms(): List<UiItem> {
         return listOf(
             UiItem.Header("Боевики"),
             UiItem.Film(
@@ -9,21 +11,21 @@ object Server {
                 "Кот в сапогах",
                 false,
                 7.9,
-                "aaaaaaaaaaaaaaaaaaaaaaa"
+                "Классный фильм"
             ),
             UiItem.Film(
                 "https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/96d93e3a-fdbf-4b6f-b02d-2fc9c2648a18/600x900",
                 "Титаник",
                 true,
                 9.19,
-                "bbbbbbbbbbbbbb"
+                "Очень крутой фильм"
             ),
             UiItem.Film(
                 "https://kinogo.biz/uploads/mini/minifull/807/1631897484-1274225097.webp",
                 "Дюна",
                 false,
                 7.7,
-                "ccccccccccccccccccccccc"
+                "Хороший фильм"
             ),
             UiItem.Header("Комедии"),
             UiItem.Film(
@@ -31,50 +33,49 @@ object Server {
                 "Освобождение",
                 false,
                 6.5,
-                "ddddddddddddddddddddddd"
+                "Фильм не очень"
             ),
             UiItem.Film(
                 "https://upload.wikimedia.org/wikipedia/ru/5/53/The_Lord_of_the_Rings._The_Return_of_the_King_%E2%80%94_movie.jpg",
                 "Властелин колец 3: Возвращение короля",
                 true,
                 9.45,
-                "eeeeeeeeeeeeeeeeeeeeeeeee"
+                "Классный фильм"
             ),
             UiItem.Film(
                 "https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/9bdc6690-de82-4a8c-a114-aa3a353bc1da/600x900",
                 "Звездные войны: Эпизод 4 - Новая надежда",
                 true,
                 8.68,
-                "fffffffffffffffffffffff"
+                "Очень классный фильм"
             ),
             UiItem.Header("Драмы"),
             UiItem.Film(
                 "https://kinogo.biz/uploads/mini/minifull/bb9/1654804309-741390359.webp",
                 "Сердце Пармы",
                 false,
-                6.8
-            ,"gggggggggggggggggg"
+                6.8, "Плохой фильм"
             ),
             UiItem.Film(
                 "https://upload.wikimedia.org/wikipedia/ru/5/5e/Gravity_poster.jpg",
                 "Гравитация",
                 true,
                 7.96,
-                "hhhhhhhhhhhhhhhhh"
+                "Не смотрел"
             ),
             UiItem.Film(
                 "https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/33474b2a-d670-47c8-9cbe-51291847b6d4/300x450",
                 "Крестный отец 2",
                 true,
                 8.9,
-                "iiiiiiiiiiiiiiiiii"
+                "Не смотрел, но вроде норм"
             ),
             UiItem.Film(
                 "https://kinogo.biz/uploads/mini/minifull/6e7/1670015782-176944213.webp",
                 "Тролль",
                 false,
                 5.8,
-                "jjjjjjjjjjjjjjjjjjjjjj"
+                "Не понравился"
             )
         )
     }
