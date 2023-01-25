@@ -2,7 +2,7 @@ package com.example.listoffilms.model
 
 import com.example.listoffilms.model.models.UiItem
 
-object Server : FilmsRepository {
+class FilmsRepositoryImpl : FilmsRepository {
     override fun getFilms(): List<UiItem> {
         return listOf(
             UiItem.Header("Боевики"),

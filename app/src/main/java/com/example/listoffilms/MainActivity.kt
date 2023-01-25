@@ -15,7 +15,6 @@ import com.example.listoffilms.ui.HeaderFragment
 
 class MainActivity : AppCompatActivity(), FilmsView {
     private var presenter: FilmsPresenter? = null
-
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
