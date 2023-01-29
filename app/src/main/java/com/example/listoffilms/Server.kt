@@ -1,10 +1,10 @@
-package com.example.listoffilms.model
+package com.example.listoffilms
 
-import com.example.listoffilms.model.models.UiItem
+import com.example.listoffilms.data.models.UiItem
 
-class FilmsRepositoryImpl : FilmsRepository {
-    override fun getFilms(): List<UiItem> {
-        return listOf(
+object Server {
+    fun getFilms(): List<UiItem> =
+        listOf(
             UiItem.Header("Боевики"),
             UiItem.Film(
                 "https://kinogo.biz/uploads/mini/minifull/cc2/1672684393-1384154035.webp",
@@ -78,5 +78,4 @@ class FilmsRepositoryImpl : FilmsRepository {
                 "Не понравился"
             )
         )
-    }
 }

@@ -7,7 +7,7 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.listoffilms.R
-import com.example.listoffilms.model.models.UiItem
+import com.example.listoffilms.data.models.UiItem
 
 class FilmViewHolder(itemView: View, private val itemClick: (String, String) -> Unit) : RecyclerView.ViewHolder(itemView) {
     fun bind(film: UiItem.Film) {
@@ -21,11 +21,11 @@ class FilmViewHolder(itemView: View, private val itemClick: (String, String) -> 
             .load(film.poster)
             .into(poster)
         name.text = film.name
-        hasOscar.isVisible = film.hasOscar
+        hasOscar.isVisible = film.hasOscar == true
         rating.text = film.rating.toString()
 
         itemView.setOnClickListener {
-            itemClick.invoke(film.name, film.description)
+            film.name.let { it1 -> film.description.let { it2 -> itemClick.invoke(it1, it2) } }
         }
     }
 }

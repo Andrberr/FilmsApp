@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.listoffilms.R
-import com.example.listoffilms.presenter.FilmsPresenter
-import com.example.listoffilms.presenter.FilmsPresenterImpl
 
 class HeaderFragment : Fragment() {
     companion object {
