@@ -1,4 +1,4 @@
-package com.example.listoffilms
+package com.example.listoffilms.ui
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
@@ -9,9 +9,6 @@ import com.example.listoffilms.R
 import com.example.listoffilms.model.models.UiItem
 import com.example.listoffilms.presenter.FilmsPresenter
 import com.example.listoffilms.presenter.FilmsPresenterImpl
-import com.example.listoffilms.ui.FilmsAdapter
-import com.example.listoffilms.ui.FilmsView
-import com.example.listoffilms.ui.HeaderFragment
 
 class MainActivity : AppCompatActivity(), FilmsView {
     private var presenter: FilmsPresenter? = null
@@ -32,7 +29,6 @@ class MainActivity : AppCompatActivity(), FilmsView {
         val recycler = findViewById<RecyclerView>(R.id.recycler)
         val itemClick: (String, String) -> Unit = { name, descr ->
             val headerFragment = HeaderFragment.newInstance(name, descr)
-
             supportFragmentManager
                 .beginTransaction()
                 .add(R.id.frame_layout, headerFragment)
