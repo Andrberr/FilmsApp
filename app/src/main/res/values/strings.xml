@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ListOfFilms</string>
+    <string name="button">Forward</string>
 </resources>
