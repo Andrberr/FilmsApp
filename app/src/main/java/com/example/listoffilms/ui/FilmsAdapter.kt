@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.listoffilms.R
-import com.example.listoffilms.model.models.UiItem
+import com.example.listoffilms.data.models.UiItem
 
 class FilmsAdapter(private val list: List<UiItem>, private val itemCLick: (String, String) -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 

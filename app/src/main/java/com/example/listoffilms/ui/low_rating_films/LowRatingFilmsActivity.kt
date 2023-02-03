@@ -1,31 +1,28 @@
-package com.example.listoffilms.ui
+package com.example.listoffilms.ui.low_rating_films
 
-import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.listoffilms.R
-import com.example.listoffilms.model.models.UiItem
-import com.example.listoffilms.presenter.FilmsPresenter
-import com.example.listoffilms.presenter.FilmsPresenterImpl
+import com.example.listoffilms.data.models.UiItem
+import com.example.listoffilms.ui.FilmsAdapter
+import com.example.listoffilms.ui.HeaderFragment
+import com.example.listoffilms.ui.low_rating_films.presenter.LowRatingFilmsPresenter
+import com.example.listoffilms.ui.low_rating_films.presenter.LowRatingFilmsPresenterImpl
 
-class MainActivity : AppCompatActivity(), FilmsView {
-    private var presenter: FilmsPresenter? = null
-    @SuppressLint("MissingInflatedId")
+class LowRatingFilmsActivity : AppCompatActivity(), LowRatingFilmsView {
+
+    private var presenter: LowRatingFilmsPresenter? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        presenter = FilmsPresenterImpl(this)
-        presenter?.getFilms()
+        setContentView(R.layout.activity_low_rating_films)
+         presenter = LowRatingFilmsPresenterImpl(this)
+         presenter?.getLowRatingFilms()
     }
 
-    override fun onBackPressed() {
-        if (supportFragmentManager.backStackEntryCount == 0) super.onBackPressed()
-        else supportFragmentManager.popBackStack()
-    }
-
-    override fun showFilms(films: List<UiItem>) {
+    override fun showLowRatingFilms(films: List<UiItem>) {
         val recycler = findViewById<RecyclerView>(R.id.recycler)
         val itemClick: (String, String) -> Unit = { name, descr ->
             val headerFragment = HeaderFragment.newInstance(name, descr)

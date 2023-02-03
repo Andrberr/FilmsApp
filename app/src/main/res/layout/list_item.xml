@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/poster"
-        android:layout_width="286dp"
-        android:layout_height="199dp"
+        android:layout_width="220dp"
+        android:layout_height="202dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,10 +18,10 @@
 
     <TextView
         android:id="@+id/name"
-        android:layout_width="212dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="213dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,27 +32,27 @@
         android:layout_width="55dp"
         android:layout_height="53dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="28dp"
 
         android:textColor="#A57124"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.012"
         app:layout_constraintStart_toEndOf="@+id/name"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/oscar"
-        android:layout_width="88dp"
-        android:layout_height="79dp"
+        android:layout_width="51dp"
+        android:layout_height="75dp"
         android:layout_marginStart="16dp"
 
         android:layout_marginTop="80dp"
         android:src="@drawable/oscar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toEndOf="@+id/poster"
         app:layout_constraintTop_toBottomOf="@+id/rating"
         app:layout_constraintVertical_bias="0.0" />

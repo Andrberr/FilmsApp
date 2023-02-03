@@ -1,4 +1,4 @@
-package com.example.listoffilms.presenter
+package com.example.listoffilms.ui.films.presenter
 
 interface FilmsPresenter {
     fun getFilms()
